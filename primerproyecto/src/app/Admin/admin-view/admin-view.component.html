@@ -1,0 +1,36 @@
+<div class="container">
+ <img
+    src="assets/icons/waiting.gif"
+    alt="Please wait..."
+    *ngIf="!(admin && admin.id)"
+  />
+
+  <div *ngIf="admin && admin.id">
+    <a [routerLink]="['/admin/edit', admin.id]">Edit</a>
+    <table class="table table-light">
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td>{{ admin.id }}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>{{ admin.estacion}}</td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>{{ admin.dia }}</td>
+        </tr>
+        <tr>
+          <td>Salary</td>
+          <td>{{ admin.hora }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="backToList()">Back to list</button>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div>
+  <button type="button" class="btn btn-secondary btn-lg" [routerLink]="['/inicio']">Salir</button>
+  <table class="table table-light">
+    <thead class="thead-light">
+      <tr>
+        <th>Id</th>
+        <th>Estacion</th>
+        <th>Dia</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admins of admin">
+        <td>
+          <a [routerLink]="['/admin/view', admins.id]">{{
+            admins.id
+          }}</a>
+        </td>
+        <td>{{ admins.estacion }}</td>
+        <td>{{ admins.dia }}</td>
+        <td>{{ admins.hora }}</td>
+  <button type="button" class="btn btn-secondary btn-lg" [routerLink]="['/edit']">editar</button>
+      </tr>
+    </tbody>
+  </table>
+</div>

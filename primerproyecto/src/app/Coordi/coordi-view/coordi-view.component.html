@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div *ngIf="coordi && coordi.id">
+    <a [routerLink]="['/coordi/edit', coordi.id]">Edit</a>
+    <table class="table table-light">
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td>{{ coordi.id }}</td>
+        </tr>
+        <tr>
+          <td>Nombre</td>
+          <td>{{ coordi.name }}</td>
+        </tr>
+        <tr>
+          <td>Ciudad</td>
+          <td>{{ coordi.ciudad }}</td>
+        </tr>
+        <tr>
+          <td>Telefono</td>
+          <td>{{ coordi.telefono }}</td>
+        </tr>
+        <tr>
+          <td>Direccion</td>
+          <td>{{ coordi.direccion }}</td>
+        </tr>
+        <tr>
+          <td>Bus</td>
+          <td>{{ coordi.bus }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="backToList()">Back to list</button>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+</div>
